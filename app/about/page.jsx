@@ -4,16 +4,16 @@ import Header from '../dashboard/_components/Header';
 function About() {
   const teamMembers = [
     {
+      name: "MR. PIYUSH GHANGHAV",
+      linkedin: "https://www.linkedin.com/in/piyush-ghanghav/",
+    },
+    {
       name: "MR. YASHODIP KOLHE",
       linkedin: "https://www.linkedin.com/in/yashodip-kolhe-68732a233/",
     },
     {
       name: "MR. VEDANT GORDE",
       linkedin: "https://www.linkedin.com/in/vedant-gorde/",
-    },
-    {
-      name: "MR. PIYUSH GHANGHAV",
-      linkedin: "https://www.linkedin.com/in/piyush-ghanghav/",
     },
     {
       name: "MR. SHREEJIT PANGAVHANE",
