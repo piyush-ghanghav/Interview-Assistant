@@ -84,8 +84,10 @@ function AddNewInterview() {
 
         try {
             // Create a new chat session
-            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
             const chat = model.startChat();
+            // const availableModels = await genAI.listModels();
+            // console.log(availableModels);
 
             // Send the message and get the response
             const result = await chat.sendMessage(inputPrompt);
