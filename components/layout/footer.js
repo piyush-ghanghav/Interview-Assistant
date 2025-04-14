@@ -41,7 +41,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-blue-200">
-          <p className="text-center text-gray-600">© 2024 InterviewPro. All rights reserved.</p>
+          <p className="text-center text-gray-600">© 2025 InterviewPro. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,9 +1,9 @@
+"use client";
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { fadeInUp } from '../../lib/animations';
 import Link from 'next/link';
-
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
