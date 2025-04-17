@@ -1,5 +1,6 @@
 import { pgTable, serial,text, varchar } from "drizzle-orm/pg-core";
-export const MockInterview = pgTable('MockInterview',{  //this are the columuns of the database
+export const MockInterview = pgTable('MockInterview',{  
+    //these are the columuns of the database
     id:serial('id').primaryKey(),
     jsonMockresponse :text('jsonMockresponse').notNull(),
     jobPosition : varchar('jobPosition').notNull(),
