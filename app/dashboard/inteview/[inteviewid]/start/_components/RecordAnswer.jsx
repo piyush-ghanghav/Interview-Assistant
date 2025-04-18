@@ -16,7 +16,7 @@ import { Button } from "../../../../_components/@/components/ui/button";
 // import { Mic } from 'lucide-react';
 import { Mic, StopCircle, Camera, AlertCircle } from "lucide-react";
 
-const MODEL_NAME = "gemini-pro";
+const MODEL_NAME = "gemini-1.5-flash";
 
 function RecordAnswer({
   mockInterviewQuestions,

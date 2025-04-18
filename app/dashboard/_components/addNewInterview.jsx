@@ -78,7 +78,7 @@ function AddNewInterview() {
                                 Years of Experience: ${jobExperience}, 
                                 Projects and Skills: ${formattedResume}. 
 
-                                Please generate 10 interview questions for the Full Stack Developer role, starting with an introduction question. Including the introduction, it should be a total of 11 questions. For each question, provide corresponding answers based on the details I've provided. The answers should reflect a person with ${jobExperience} years in this role. The complexity of both the questions and answers should be aligned with real-world interviews for someone at this experience level, with common questions that have been asked in previous interviews. Ensure that the answers are detailed but appropriate for someone with ${jobExperience} years in this job. 
+                                Please generate only 10 interview questions for the Full Stack Developer role, starting with an introduction question. Including the introduction, it should be a total of 11 questions. For each question, provide corresponding answers based on the details I've provided. The answers should reflect a person with ${jobExperience} years in this role. The complexity of both the questions and answers should be aligned with real-world interviews for someone at this experience level, with common questions that have been asked in previous interviews. Ensure that the answers are detailed but appropriate for someone with ${jobExperience} years in this job. 
 
                                 The response should be in pure JSON format without any code fences or additional text.`;
 

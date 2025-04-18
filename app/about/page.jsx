@@ -38,7 +38,6 @@ function About() {
         </p>
       </section>
 
-      {/* Team Members Section */}
       <section className="py-20 px-10">
         <h2 className="text-3xl font-bold mb-10 text-center">Meet the Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -48,7 +47,7 @@ function About() {
               className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center"
             >
               <div className="w-24 h-24 bg-indigo-600 text-white flex items-center justify-center rounded-full text-2xl font-bold mb-4">
-                {member.name[0]} {/* First Letter of Name */}
+                {member.name[0]} 
               </div>
               <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
               <a

@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { MockInterview } from "../../../../utils/schema";
+import { MockInterview } from "@/utils/schema";
 import { eq } from "drizzle-orm";
-import { db } from "../../../../utils/db";
+import { db } from "@/utils/db";
 import Webcam from "react-webcam";
 import { WebcamIcon } from "lucide-react";
 import { Button } from "../../_components/@/components/ui/button";
@@ -36,10 +36,10 @@ function Interview({ params }) {
       if (Array.isArray(result) && result.length > 0) {
         setInterviewData(result[0]); // Assuming you want the first item
       } else {
-        // console.warn("No data found for the given interview ID.");
+        console.warn("No data found for the given interview ID.");
       }
     } catch (error) {
-      // console.error("Error fetching interview details:", error);
+      console.error("Error fetching interview details:", error);
     }
   };
 
@@ -109,7 +109,7 @@ function Interview({ params }) {
                   borderRadius: "10px",
                   objectFit: "cover",
                 }}
-                mirrored={true} // Ensure the webcam feed is mirrored
+                mirrored={true} 
               />
             ) : (
               <div className="flex items-center justify-center h-full w-full">
@@ -118,7 +118,7 @@ function Interview({ params }) {
             )}
           </div>
 
-          {/* Button below Webcam */}
+          
           <Button
             className="bg-blue-600 text-white py-2 px-6 rounded-lg mt-2 transition-transform hover:scale-105 shadow-md"
             onClick={requestWebcamPermission}

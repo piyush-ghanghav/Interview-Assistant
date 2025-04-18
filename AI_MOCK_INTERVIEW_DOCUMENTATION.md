@@ -114,6 +114,11 @@ An intelligent interview preparation platform that leverages AI to conduct mock 
 
 ### MockInterview Table
 
+## DB Commands
+   ```
+   npm run db:studio
+   ```
+
 ## Key Features Implementation
 
 ### 1. Interview Creation
