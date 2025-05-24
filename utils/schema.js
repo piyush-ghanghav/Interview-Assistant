@@ -9,7 +9,9 @@ export const MockInterview = pgTable('MockInterview',{
     Resume : varchar('Resume').notNull(),
     createdby : varchar('createdby').notNull(),
     createdat : varchar('createdat').notNull(),
-    mockId:varchar('mockID').notNull()
+    mockId:varchar('mockID').notNull(),
+    interviewType: varchar('interview_type', { length: 50 }),
+    questionFocus: text('question_focus'),
     
 })
 

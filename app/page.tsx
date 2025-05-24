@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'AI Interview Assistant',
     description: 'Practice interviews with AI feedback',
     type: 'website',
-    // url: 'https://ai-interview-assistant.com',
     images: [
       {
         url: '/og-image.png',

@@ -48,7 +48,7 @@ const Dashboard = () => {
 
           <div className="col-span-1 sm:col-span-2 grid grid-rows-2 gap-6">
             <div className="bg-gray-50 rounded-xl p-4">
-              <div className="h-[calc(100%-2rem)] overflow-auto">
+              <div className=" min-h-full overflow-auto">
                 <InterviewList limit={6}/>
               </div>
             </div>
