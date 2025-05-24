@@ -71,6 +71,14 @@ export function InterviewDetailsForm({
         onQuestionFocusChange(areaId);
     };
 
+    // Update the input handlers to handle ChangeEvent properly
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+        handler: (value: string) => void
+    ) => {
+        handler(e.target.value);
+    };
+
     return (
         <div className="bg-white rounded-xl shadow-lg">
             <div className="border-b px-6 py-4">
@@ -90,7 +98,8 @@ export function InterviewDetailsForm({
                                 placeholder="Ex. Full Stack Developer"
                                 required
                                 value={jobRole}
-                                onChange={(e) => onJobRoleChange(e.target.value)}
+                                onChange={(e) => handleInputChange(e, onJobRoleChange)}
+                                name="jobRole"
                                 className="h-11"
                             />
                         </div>
@@ -102,7 +111,7 @@ export function InterviewDetailsForm({
                                 placeholder="Describe the role and required technologies..."
                                 required
                                 value={jobDescription}
-                                onChange={(e) => onJobDescriptionChange(e.target.value)}
+                                onChange={(e) => handleInputChange(e, onJobDescriptionChange)}
                                 className="min-h-[100px]"
                             />
                         </div>
@@ -114,7 +123,8 @@ export function InterviewDetailsForm({
                                 placeholder="Ex. 1, 2, 4 years"
                                 required
                                 value={jobExperience}
-                                onChange={(e) => onJobExperienceChange(e.target.value)}
+                                onChange={(e) => handleInputChange(e, onJobExperienceChange)}
+                                name="experience"
                                 className="h-11"
                             />
                         </div>

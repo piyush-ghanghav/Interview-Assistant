@@ -191,43 +191,45 @@ function InterviewForm({ onClose }) {
 
             <InterviewDetailsForm
                 jobRole={jobRole}
-                setJobRole={setJobRole}
                 jobDescription={jobDescription}
-                setJobDescription={setJobDescription}
                 jobExperience={jobExperience}
-                setJobExperience={setJobExperience}
                 projects={projects}
-                setProjects={setProjects}
                 skills={skills}
-                setSkills={setSkills}
                 interviewType={interviewType}
-                onInterviewTypeChange={handleInterviewTypeChange}
                 questionFocus={questionFocus}
+                loading={loading}
+                onJobRoleChange={setJobRole}           // Changed from setJobRole={setJobRole}
+                onJobDescriptionChange={setJobDescription}
+                onJobExperienceChange={setJobExperience}
+                onProjectsChange={setProjects}
+                onSkillsChange={setSkills}
+                onInterviewTypeChange={handleInterviewTypeChange}
                 onQuestionFocusChange={handleQuestionFocusChange}
+                onSubmit={handleSubmit}
             />
 
             <div className="mt-6 flex justify-end gap-4">
-                <Button
-                    variant="outline"
-                    onClick={onClose}
-                    disabled={loading}
-                >
-                    Cancel
-                </Button>
-                <Button
-                    onClick={handleSubmit}
-                    disabled={loading}
-                    className="bg-primary text-white"
-                >
-                    {loading ? (
-                        <>
-                            <LoaderCircle className="animate-spin mr-2" />
-                            Generating...
-                        </>
-                    ) : (
-                        'Create Interview'
-                    )}
-                </Button>
+                    {/* <Button
+                        variant="outline"
+                        onClick={onClose}
+                        disabled={loading}
+                    >
+                        Cancel
+                    </Button>
+                    <Button
+                        onClick={handleSubmit}
+                        disabled={loading}
+                        className="bg-primary text-white"
+                    >
+                        {loading ? (
+                            <>
+                                <LoaderCircle className="animate-spin mr-2" />
+                                Generating...
+                            </>
+                        ) : (
+                            'Create Interview'
+                        )}
+                    </Button> */}
             </div>
         </div>
     );
