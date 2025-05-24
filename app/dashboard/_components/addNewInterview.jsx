@@ -8,7 +8,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { X } from "lucide-react";
-import InterviewForm from './InterviewForm';
+import InterviewForm from './interviewForm';
 
 function AddNewInterview() {
     const [openDialog, setOpenDialog] = useState(false);
