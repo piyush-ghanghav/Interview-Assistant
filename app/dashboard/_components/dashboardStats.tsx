@@ -23,25 +23,25 @@ const stats = [
     icon: Clock,
     title: 'Time Management',
     description: 'Response timing practice',
-    color: 'orange'
+    color: 'yellow'
   },
   {
     icon: Award,
     title: 'Performance Score',
     description: 'Detailed evaluation metrics',
-    color: 'teal'
+    color: 'red'
   },
   {
     icon: Brain,
     title: 'AI Assistance',
     description: 'Smart interview guidance',
-    color: 'rose'
+    color: 'black'
   },
   {
     icon: BookOpen,
     title: 'Your Resources',
     description: 'Access your interview materials',
-    color: 'indigo'
+    color: 'green'
   }
 ];
 

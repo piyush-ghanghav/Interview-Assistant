@@ -182,7 +182,7 @@ function About() {
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                 <line x1="12" y1="17" x2="12.01" y2="17"></line>
               </svg>
-              <span className="text-xl font-bold" style={{ color: "#374151" }}>AI Interview Assistant</span>
+              <span className="text-xl font-bold" style={{ color: "#374151" }}>InterviewPro AI</span>
             </div>
           </div>
           <div className="text-sm" style={{ color: "#6B7280" }}>© 2025 All Rights Reserved</div>

@@ -181,7 +181,7 @@ function InterviewForm({ onClose }) {
     };
 
     return (
-        <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg ">
             <h2 className="text-2xl font-bold mb-6">Create Mock Interview</h2>
             {error && (
                 <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
@@ -207,30 +207,6 @@ function InterviewForm({ onClose }) {
                 onQuestionFocusChange={handleQuestionFocusChange}
                 onSubmit={handleSubmit}
             />
-
-            <div className="mt-6 flex justify-end gap-4">
-                    {/* <Button
-                        variant="outline"
-                        onClick={onClose}
-                        disabled={loading}
-                    >
-                        Cancel
-                    </Button>
-                    <Button
-                        onClick={handleSubmit}
-                        disabled={loading}
-                        className="bg-primary text-white"
-                    >
-                        {loading ? (
-                            <>
-                                <LoaderCircle className="animate-spin mr-2" />
-                                Generating...
-                            </>
-                        ) : (
-                            'Create Interview'
-                        )}
-                    </Button> */}
-            </div>
         </div>
     );
 }

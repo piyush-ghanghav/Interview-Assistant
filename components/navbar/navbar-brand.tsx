@@ -16,7 +16,7 @@ export function NavbarBrand({ link }: NavbarBrandProps) {
   return (
     <Link href={brandLink} className="flex items-center hover:opacity-90 transition-opacity">
       <Brain className="h-8 w-8 text-primary" />
-      <span className="ml-2 text-xl font-bold">AI Interview Assistant</span>
+      <span className="ml-2 text-xl font-bold">InterviewPro AI</span>
     </Link>
   );
 }

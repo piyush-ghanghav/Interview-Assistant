@@ -4,11 +4,11 @@ import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/sections/hero'
 
 export const metadata: Metadata = {
-  title: 'AI Interview Assistant - Practice Interviews with AI',
+  title: 'InterviewPro AI - Practice Interviews with AI',
   description: 'Prepare for your next interview with our AI-powered interview assistant. Practice real-world scenarios and get instant feedback.',
   keywords: ['interview practice', 'AI interview', 'mock interview', 'interview preparation'],
   openGraph: {
-    title: 'AI Interview Assistant',
+    title: 'InterviewPro AI',
     description: 'Practice interviews with AI feedback',
     type: 'website',
     images: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'AI Interview Assistant'
+        alt: 'InterviewPro AI'
       }
     ]
   }

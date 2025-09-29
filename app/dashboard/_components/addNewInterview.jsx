@@ -26,7 +26,7 @@ function AddNewInterview() {
 
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
 
-                <DialogContent className="max-w-[95vw] max-h-[95vh] h-full w-full overflow-y-auto">
+                <DialogContent className="max-w-[85vw] max-h-[95vh] h-full w-full overflow-y-auto">
                 <DialogTitle></DialogTitle>
                     <div className="mt-6 px-4">
                         <InterviewForm onClose={() => setOpenDialog(false)} />

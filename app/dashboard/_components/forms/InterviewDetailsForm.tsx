@@ -80,9 +80,8 @@ export function InterviewDetailsForm({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg">
+        <div className="bg-white rounded-xl">
             <div className="border-b px-6 py-4">
-                <h2 className="text-2xl font-bold text-gray-900">Create Your Interview</h2>
                 <p className="text-sm text-gray-500 mt-1">Fill in the details below to generate your interview questions</p>
             </div>
 
