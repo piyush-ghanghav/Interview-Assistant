@@ -8,10 +8,10 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&q=80"
+        src="https://images.unsplash.com/photo-1738005787790-cdd55b3bddec?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Background"
         fill
-        className="object-cover opacity-20"
+        className="object-cover opacity-60"
         priority
       />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -28,13 +28,16 @@ export function Hero() {
               Personalized mock interviews, resume analysis, and AI-driven insights to prepare you for your dream role.
             </p>
             <Link href="/dashboard">
-              <button className="group bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-all flex items-center hover:scale-105 transform">
+              <button className="group px-8 py-4 bg-gray-200 text-blue-600 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex items-center gap-2">
                 Begin Your Journey
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
               </button>
             </Link>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="mt-12 lg:mt-0"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

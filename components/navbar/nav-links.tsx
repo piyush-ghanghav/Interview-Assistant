@@ -21,7 +21,7 @@ export function NavLinks({ className }: NavLinksProps) {
           key={href}
           href={href}
           className={cn(
-            'text-gray-600 hover:text-primary transition-colors',
+            'text-gray-900 hover:text-primary transition-colors',
             pathname === href && 'text-primary font-medium'
           )}
         >
