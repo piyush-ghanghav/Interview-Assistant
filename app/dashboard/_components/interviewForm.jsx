@@ -125,7 +125,7 @@ function InterviewForm({ onClose }) {
             `;
 
             // Create a new chat session
-            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+            const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
             const chat = model.startChat();
 
             // Send the message and get the response
@@ -181,8 +181,8 @@ function InterviewForm({ onClose }) {
     };
 
     return (
-        <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg ">
-            <h2 className="text-2xl font-bold mb-6">Create Mock Interview</h2>
+        <div className="w-full max-w-4xl mx-auto p-6 rounded-lg ">
+            <h2 className="text-2xl font-bold px-5">Create Mock Interview</h2>
             {error && (
                 <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
                     {error}

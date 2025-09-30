@@ -67,17 +67,17 @@ export default function InterviewList({
   };
 
   if (isLoading) {
-    return <div className="col-span-full text-center">Loading interviews...</div>;
+    return <div className="col-span-full text-center text-white/80">Loading interviews...</div>;
   }
 
   if (error) {
-    return <div className="col-span-full text-center text-red-500">{error}</div>;
+    return <div className="col-span-full text-center text-red-500 text-lg">{error}</div>;
   }
 
   return (
     <div>
       <div className='flex justify-between items-center mb-4'>
-        <h2 className='font-medium text-xl'>
+        <h2 className='font-medium text-xl text-white'>
           {showViewAll ? 'All Mock Interviews' : 'Recent Sessions'}
         </h2>
       </div>
@@ -91,9 +91,9 @@ export default function InterviewList({
             />
           ))
         ) : (
-          <div className="col-span-full flex flex-col items-center justify-center p-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No interviews yet</h3>
-            <p className="text-sm text-gray-500 mb-4">Start your first mock interview to begin practicing</p>
+          <div className="col-span-full flex flex-col items-center justify-center p-8 rounded-lg border-2 border-dashed border-gray-300">
+            <h3 className="text-lg font-medium text-white mb-2">No interviews yet</h3>
+            <p className="text-sm text-white/80 mb-4">Start your first mock interview to begin practicing</p>
           </div>
         )}
       </div>

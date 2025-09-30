@@ -5,7 +5,15 @@ import { MockInterview } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { db } from "@/utils/db";
 import Webcam from "react-webcam";
-import { WebcamIcon, Briefcase, Code, Clock, FileText, AlertCircle, MoveRight } from "lucide-react";
+import {
+  WebcamIcon,
+  Briefcase,
+  Code,
+  Clock,
+  FileText,
+  AlertCircle,
+  MoveRight,
+} from "lucide-react";
 import { Button } from "../../_components/@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -44,22 +52,27 @@ function Interview({ params }) {
       await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
       setWebcamEnabled(true);
     } catch (error) {
-      alert("Could not access the webcam and microphone. Please check your permissions.");
+      alert(
+        "Could not access the webcam and microphone. Please check your permissions."
+      );
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-[80vh] max-h-[86vh] bg-white/10 rounded-lg p-5">
+      <div className="mx-5 space-y-6">
         {/* Instructions Card */}
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="p-6 border-l-4 border-blue-500 flex items-start space-x-4">
-            <AlertCircle className="h-6 w-6 text-blue-500 flex-shrink-0 mt-1" />
+        <div className="bg-white/10 rounded-lg overflow-hidden">
+          <div className="p-3 border-l-8 border-blue-500 flex items-start space-x-4">
+            <AlertCircle className="h-6  w-6 text-blue-500 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="font-semibold text-lg text-gray-900">Interview Instructions</h3>
-              <p className="mt-1 text-gray-600">
-                Enable your webcam and microphone to begin. You'll face 10 questions, and we'll provide 
-                a comprehensive evaluation report afterward.
+              <h3 className="font-semibold text-md text-white">
+                Interview Instructions
+              </h3>
+              <p className="mt-1 text-white/80">
+                Enable your webcam and microphone to begin. You'll face 10
+                questions, and we'll provide a comprehensive evaluation report
+                afterward.
               </p>
             </div>
           </div>
@@ -68,12 +81,12 @@ function Interview({ params }) {
         {/* Main Content */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Job Details Card */}
-          <div className="bg-white rounded-xl shadow-md p-6 space-y-6">
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
+          <div className="bg-white/10 rounded-xl shadow-md p-6 space-y-6">
+            <h2 className="text-xl font-semibold text-white flex items-center gap-2">
               <Briefcase className="h-5 w-5 text-blue-500" />
               Interview Details
             </h2>
-            
+
             {loading ? (
               <div className="animate-pulse space-y-4">
                 {[...Array(4)].map((_, i) => (
@@ -83,44 +96,51 @@ function Interview({ params }) {
             ) : (
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-white/80">
                     <Code className="h-4 w-4" />
                     <span className="text-sm font-medium">Role</span>
                   </div>
-                  <p className="text-gray-900">{interviewData?.jobPosition}</p>
+                  <p className="text-gray-200 pl-5">{interviewData?.jobPosition}</p>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-white/80">
                     <FileText className="h-4 w-4" />
                     <span className="text-sm font-medium">Description</span>
                   </div>
-                  <p className="text-gray-900">{interviewData?.jobDesc}</p>
+                  <p className="text-white whitespace-pre-line  pl-5">
+                    {interviewData?.jobDesc?.split("\n").slice(0, 3).join("\n")}
+                    {interviewData?.jobDesc &&
+                      interviewData.jobDesc.split("\n").length > 3 &&
+                      " ..."}
+                  </p>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-gray-600">
+                  <div className="flex items-center gap-2 text-white/80">
                     <Clock className="h-4 w-4" />
                     <span className="text-sm font-medium">Experience</span>
                   </div>
-                  <p className="text-gray-900">{interviewData?.jobExp} years</p>
+                  <p className="text-white  pl-5">{interviewData?.jobExp} years</p>
                 </div>
               </div>
             )}
           </div>
 
           {/* Webcam Card */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Camera Preview</h2>
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+          <div className="bg-white/10 rounded-xl shadow-md p-6">
+            <h2 className="text-xl font-semibold text-white mb-4">
+              Camera Preview
+            </h2>
+            <div className="aspect-video bg-white/10 rounded-lg overflow-hidden mb-4">
               {webcamEnabled ? (
                 <Webcam
                   className="w-full h-full object-cover"
                   mirrored={true}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gray-50">
-                  <WebcamIcon className="h-24 w-24 text-gray-400" />
+                <div className="w-full h-full flex items-center justify-center bg-white/10">
+                  <WebcamIcon className="h-24 w-24 text-white" />
                 </div>
               )}
             </div>
@@ -128,8 +148,8 @@ function Interview({ params }) {
               onClick={requestWebcamPermission}
               className={cn(
                 "w-full",
-                webcamEnabled 
-                  ? "bg-green-500 hover:bg-green-600" 
+                webcamEnabled
+                  ? "bg-green-500 hover:bg-green-600"
                   : "bg-blue-500 hover:bg-blue-600"
               )}
             >
@@ -141,7 +161,7 @@ function Interview({ params }) {
         {/* Start Button */}
         <div className="flex justify-center pt-6">
           <Link href={`/dashboard/inteview/${params.inteviewid}/start`}>
-            <Button 
+            <Button
               size="lg"
               className={cn(
                 "text-lg font-semibold px-8 py-6",

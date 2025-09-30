@@ -58,10 +58,7 @@ function StartInterviewPage({ params }) {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mt-3 mb-6">Interview Questions</h1>
-
-      {/* Conditional rendering while the questions are being loaded */}
+    <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 sm:p-6 lg:p-8 min-h-[80vh] max-h-[86vh]">
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Pass the mockInterviewQuestions to the QutionSection component */}

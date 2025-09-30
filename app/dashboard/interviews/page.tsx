@@ -25,49 +25,64 @@ export default function InterviewsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-y-auto mt-5">
-      <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-sm p-4 sm:p-6">
+    <div className="min-h-[85vh]  pt-10">
+      {/* Animated Background Orbs */}
+      <div className="fixed top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      <div
+        className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl animate-pulse pointer-events-none"
+        style={{ animationDelay: "1s" }}
+      />
+
+      <div className="max-w-7xl mx-10  bg-white/10 rounded-xl shadow-sm p-6  pt-10 sm:p-6 min-h-[80vh]">
         <div className="mb-6">
-          <h1 className="text-2xl font-semibold text-gray-900">
-            My Interviews
-          </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <h1 className="text-2xl font-semibold text-white">My Interviews</h1>
+          <p className="text-sm text-white/80 backdrop-blur-sm mt-1">
             View all your mock interview sessions
           </p>
         </div>
-
-        <InterviewList 
-          showViewAll={true} 
-          page={currentPage}
-          limit={interviewsPerPage}
-          onTotalCountChange={handleTotalCountChange}
-        />
+        <div className=" backdrop-blur-sm">
+          <InterviewList
+            showViewAll={true}
+            page={currentPage}
+            limit={interviewsPerPage}
+            onTotalCountChange={handleTotalCountChange}
+          />
+        </div>
 
         {totalInterviews > interviewsPerPage && (
           <div className="mt-8">
             <Pagination>
               <PaginationContent>
                 <PaginationItem>
-                  <PaginationPrevious 
+                  <PaginationPrevious
                     onClick={() => handlePageChange(currentPage - 1)}
-                    className={`cursor-pointer ${currentPage === 1 ? 'opacity-50 pointer-events-none' : ''}`}
+                    className={`cursor-pointer ${
+                      currentPage === 1 ? "opacity-50 pointer-events-none" : ""
+                    }`}
                   />
                 </PaginationItem>
-                {[...Array(Math.ceil(totalInterviews / interviewsPerPage))].map((_, i) => (
-                  <PaginationItem key={i}>
-                    <PaginationLink
-                      className="cursor-pointer"
-                      isActive={currentPage === i + 1}
-                      onClick={() => handlePageChange(i + 1)}
-                    >
-                      {i + 1}
-                    </PaginationLink>
-                  </PaginationItem>
-                ))}
+                {[...Array(Math.ceil(totalInterviews / interviewsPerPage))].map(
+                  (_, i) => (
+                    <PaginationItem key={i}>
+                      <PaginationLink
+                        className="cursor-pointer"
+                        isActive={currentPage === i + 1}
+                        onClick={() => handlePageChange(i + 1)}
+                      >
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  )
+                )}
                 <PaginationItem>
-                  <PaginationNext 
+                  <PaginationNext
                     onClick={() => handlePageChange(currentPage + 1)}
-                    className={`cursor-pointer ${currentPage === Math.ceil(totalInterviews / interviewsPerPage) ? 'opacity-50 pointer-events-none' : ''}`}
+                    className={`cursor-pointer ${
+                      currentPage ===
+                      Math.ceil(totalInterviews / interviewsPerPage)
+                        ? "opacity-50 pointer-events-none"
+                        : ""
+                    }`}
                   />
                 </PaginationItem>
               </PaginationContent>

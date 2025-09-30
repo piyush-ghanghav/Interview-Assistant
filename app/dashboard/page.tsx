@@ -1,60 +1,75 @@
+
 "use client";
 
 import React from "react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import AddNewInterview from "./_components/addNewInterview";
 import InterviewList from "./_components/InterviewList";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Sparkles } from "lucide-react";
 import { StatsGrid } from "./_components/dashboardStats";
 
 const Dashboard = () => {
   const { user } = useUser();
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-y-auto mt-5">
-      <div className="max-w-7xl mx-auto bg-white  p-4 sm:p-6 flex flex-col">
+    <div className="pt-5" >
+      {/* Glass Card Container */}
+      <div className="bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6 lg:p-6 min-h-[80vh] max-h-[86vh]">
         
-        <div className="relative mb-6">
-          <div className="absolute top-0 right-0 flex items-center space-x-3 md:flex">
-            <div className="flex items-center">
-              <UserButton afterSignOutUrl="/" />
-              {user && (
-                <div className="ml-2 flex flex-col text-gray-900 font-medium hover:bg-gray-100 rounded-md p-2 transition-colors duration-200">
-                  <span className="text-sm">
-                    {user.firstName} {user.lastName}
-                  </span>
-                </div>
-              )}
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-6">
+          {/* Left: Title */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl shadow-lg">
+                <BookOpen className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h1 className="text-lg lg:text-xl font-bold text-white drop-shadow-lg">
+                  Your Interview Workspace
+                </h1>
+                
+              </div>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <div className="flex items-center gap-3">
-              <BookOpen className="w-6 h-6 text-gray-700" />
-              <h1 className="text-2xl font-semibold text-gray-900">
-                Your Interview Workspace
-              </h1>
-            </div>
+          {/* Right: User Profile */}
+          <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full p-2 pr-4 border border-white/20 hover:bg-white/20 transition-all duration-300 self-start md:self-auto">
+            <UserButton afterSignOutUrl="/" />
+            {user && (
+              <div className="ml-3 flex flex-col">
+                <span className="text-sm font-medium text-white">
+                  {user.firstName} {user.lastName}
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 flex-1">
-          <div className="space-y-6">
-            <div className="bg-gray-50 rounded-xl p-4 shadow-sm">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+          {/* Left Column - Actions & Stats */}
+          <div className="space-y-6 lg:col-span-1 min-h-[70vh]">
+            {/* Add New Interview Card */}
+            <div className=" backdrop-blur-sm rounded-2xl p-2 group">
               <AddNewInterview />
             </div>
-            <StatsGrid />
+
+            {/* Stats Card */}
+            <div className="backdrop-blur-sm rounded-2xl p-4">
+              <StatsGrid />
+            </div>
           </div>
 
-          <div className="col-span-1 sm:col-span-2 grid grid-rows-2 gap-6">
-            <div className="bg-gray-50 rounded-xl p-4">
-              <div className=" min-h-full overflow-auto">
+          {/* Right Column - Interview List */}
+          <div className="lg:col-span-2">
+            <div className="backdrop-blur-sm rounded-2xl p-6  min-h-[70vh]">
+              <div className="overflow-auto">
                 <InterviewList limit={6}/>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

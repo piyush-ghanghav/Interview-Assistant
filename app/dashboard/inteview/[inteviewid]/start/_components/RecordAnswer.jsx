@@ -16,7 +16,7 @@ import { Button } from "../../../../_components/@/components/ui/button";
 // import { Mic } from 'lucide-react';
 import { Mic, StopCircle, Camera, AlertCircle } from "lucide-react";
 
-const MODEL_NAME = "gemini-1.5-flash";
+const MODEL_NAME = "gemini-2.5-flash";
 
 function RecordAnswer({
   mockInterviewQuestions,
@@ -151,7 +151,7 @@ function RecordAnswer({
     return <p>Web Speech API is not available in this browser 🤷‍</p>;
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 shadow-sm">
+    <div className="bg-white/20 p-6 rounded-xl border border-white/10 shadow-sm max-h-[75vh]">
       {webcamEnabled ? (
         <div className="space-y-6">
           {/* Webcam Display */}
@@ -159,11 +159,11 @@ function RecordAnswer({
             <Webcam
               audio={false}
               ref={webcamRef}
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[370px] object-cover"
             />
             {isRecording && (
               <div className="absolute top-4 right-4 flex items-center gap-2 bg-red-500 px-3 py-1 rounded-full text-white text-sm animate-pulse">
-                <div className="w-2 h-2 bg-white rounded-full" />
+                <div className="w-2 h-2 bg-white/20 rounded-full" />
                 Recording
               </div>
             )}
@@ -205,10 +205,10 @@ function RecordAnswer({
 
           {/* Transcription Area */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-gray-700">
+            <h3 className="text-lg font-semibold text-white">
               Live Transcription
             </h3>
-            <div className="bg-white rounded-lg p-4 max-h-[100px] overflow-y-auto border border-gray-200 shadow-inner">
+            <div className="bg-white/20 rounded-lg p-4 max-h-[100px] overflow-y-auto border border-gray-200 shadow-inner">
               <p className="text-gray-800 whitespace-pre-wrap">
                 {userAnswer}
                 {interimResult && (

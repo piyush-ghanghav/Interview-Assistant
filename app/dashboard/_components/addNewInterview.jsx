@@ -7,7 +7,6 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
-import { X } from "lucide-react";
 import InterviewForm from './interviewForm';
 
 function AddNewInterview() {
@@ -16,7 +15,7 @@ function AddNewInterview() {
     return (
         <div>
             <div
-                className="py-6 px-8 border-2 rounded-xl bg-blue-600 hover:scale-105 hover:shadow-xl cursor-pointer transition-all duration-300 ease-in-out mt-6 w-fit mx-auto"
+                className="py-8 px-8 mx-auto my-2 rounded-xl bg-blue-600 hover:scale-105 hover:shadow-xl cursor-pointer transition-all duration-300 ease-in-out w-fit"
                 onClick={() => setOpenDialog(true)}
             >
                 <h2 className="font-semibold text-xl text-white text-center">
@@ -26,11 +25,8 @@ function AddNewInterview() {
 
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
 
-                <DialogContent className="max-w-[85vw] max-h-[95vh] h-full w-full overflow-y-auto">
-                <DialogTitle></DialogTitle>
-                    <div className="mt-6 px-4">
+                <DialogContent className="max-w-[60vw] max-h-[95vh] overflow-y-auto">
                         <InterviewForm onClose={() => setOpenDialog(false)} />
-                    </div>
                 </DialogContent>
             </Dialog>
         </div>
